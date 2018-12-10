@@ -198,4 +198,21 @@ public class MyLinkedList<T> implements Iterable<T> {
     public boolean isEmpty() {
         return size == 0;
     }
+
+
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+        str.append("{");
+        Node current = last;
+        while (current != null) {
+            str.append((T) current.item);
+            if (current.previous != null) {
+                str.append(", ");
+            }
+            current = current.previous;
+        }
+        str.append("}");
+        return str.toString();
+    }
 }
